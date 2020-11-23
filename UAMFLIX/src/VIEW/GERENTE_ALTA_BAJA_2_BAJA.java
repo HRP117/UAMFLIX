@@ -5,7 +5,7 @@
  */
 package VIEW;
 
-import CONTROLLER.OyenteGerente;
+import CONTROLLER.OyentePersonal;
 import CONTROLLER.OyentePersonal;
 import MODEL.GestorAutentificacion.gestorAutentificacion;
 import java.awt.event.ActionEvent;

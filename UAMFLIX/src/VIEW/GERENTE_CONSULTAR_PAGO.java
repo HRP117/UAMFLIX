@@ -1,7 +1,7 @@
 
 package VIEW;
 
-import CONTROLLER.OyenteGerente;
+import CONTROLLER.OyentePersonal;
 import MODEL.GestorAutentificacion.gestorAutentificacion;
 import MODEL.GestorPersonalCliente.Personal;
 import java.sql.Connection;

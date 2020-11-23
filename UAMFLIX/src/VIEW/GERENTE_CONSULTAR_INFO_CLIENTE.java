@@ -1,7 +1,7 @@
 //bien
 package VIEW;
 
-import CONTROLLER.OyenteGerente;
+import CONTROLLER.OyentePersonal;
 import MODEL.GestorAutentificacion.gestorAutentificacion;
 import MODEL.GestorPersonalCliente.Personal;
 import java.sql.Connection;
@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class GERENTE_CONSULTAR_INFO_CLIENTE extends javax.swing.JFrame {
-    OyenteGerente og;
+    OyentePersonal og;
     public GERENTE_CONSULTAR_INFO_CLIENTE() {
         initComponents();
         //debe ir oyente informacion
-        og = new OyenteGerente(regresar, CONSULTAR, this);
+        og = new OyentePersonal(regresar, CONSULTAR, this);
         regresar.addActionListener(og);
     }
     @SuppressWarnings("unchecked")
