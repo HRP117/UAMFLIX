@@ -1,5 +1,5 @@
 /*
-orden
+ACTUAL
  */
 package VIEW;
 
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
 
 public class inicioSesion extends javax.swing.JFrame {
 OyentePrincipal oyentePrincipal;
-OyenteAutentificacion au;
     public inicioSesion() {
         initComponents();
         setLocationRelativeTo(null); //ventana en medio de la pantalla
         //boton registrarse
-        oyentePrincipal =  new OyentePrincipal(this, JB_REGISTRAR, JB_INICIAR);
+        oyentePrincipal =  new OyentePrincipal(this, JB_REGISTRAR, JB_INICIAR,REGRESAR);
         JB_REGISTRAR.addActionListener(oyentePrincipal);
         JB_INICIAR.addActionListener(oyentePrincipal);
+        REGRESAR.addActionListener(oyentePrincipal);
     }
 
 
@@ -35,6 +35,7 @@ OyenteAutentificacion au;
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         JB_INICIAR = new javax.swing.JButton();
+        REGRESAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,9 @@ OyenteAutentificacion au;
             }
         });
         jPanel1.add(JB_INICIAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 110, 50));
+
+        REGRESAR.setText("REGRESAR");
+        jPanel1.add(REGRESAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,6 +177,7 @@ OyenteAutentificacion au;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_INICIAR;
     private javax.swing.JButton JB_REGISTRAR;
+    private javax.swing.JButton REGRESAR;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

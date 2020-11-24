@@ -13,11 +13,12 @@ public class OyenteInformacion implements ActionListener{
     JButton consultarPersonal,menuConsultaPago,modificarSalario;
     JButton regresarConsultarPago,regresarConsultarCliente;
     JButton regresarConsultarPersonal,regresarModificarSalario;
-    
+    JButton regresar_cliente_consultaPago,cancelarServicio;
     Registro registro;
     inicioSesion sesion;
     menuCU mcu;
     Cliente_consultarPago ccp;
+    Cliente_Cancelar_servicio ccs;
     menuGerente mg;
     GERENTE_CONSULTAR_INFO_CLIENTE GUICONSULTARINFOCLIENTE;
     GERENTE_CONS_INFO_PERSONAL GUI_INFO_PER;
@@ -31,12 +32,6 @@ public OyenteInformacion(menuCU mcu,JButton consultaPago) {
         this.consultaPago = consultaPago;
         this.mcu = mcu;
 }    
-//consultar pago gerente
-public OyenteInformacion(JButton regresarConsultarPago, JButton modificarSalario, GERENTE_CONSULTAR_PAGO GUIconsultarPago) {
-        this.regresarConsultarPago = regresarConsultarPago;
-        this.modificarSalario = modificarSalario;
-        this.GUIconsultarPago = GUIconsultarPago;
- }
   
 //GUI CONSULTAR CLIENTE//
 
@@ -53,6 +48,13 @@ public OyenteInformacion(JButton consultaInfoCliente, JButton regresarConsultarC
         this.GUIPERSONAL = GUIPERSONAL;
     }
     
+   //GUI CLIENTE CONSULTAR PAGO
+       public OyenteInformacion(JButton regresar_cliente_consultaPago, JButton cancelarServicio, Cliente_consultarPago ccp) {
+        this.regresar_cliente_consultaPago = regresar_cliente_consultaPago;
+        this.cancelarServicio = cancelarServicio;
+        this.ccp = ccp;
+    }
+    
     
    public void actionPerformed(ActionEvent ae) {
         Object botonPresionado = ae.getSource();
@@ -61,8 +63,15 @@ public OyenteInformacion(JButton consultaInfoCliente, JButton regresarConsultarC
             new Cliente_consultarPago().setVisible(true);
             registro.setVisible(false);
             sesion.setVisible(false);
-            
-        
+        }
+        //gui consultar pago
+        if(botonPresionado==regresar_cliente_consultaPago){
+            new menuCU().setVisible(true);
+            ccp.setVisible(false);
+        }
+        if(botonPresionado==cancelarServicio){
+            new Cliente_Cancelar_servicio().setVisible(true);
+            ccp.setVisible(false);
         }
     }
 }

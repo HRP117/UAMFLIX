@@ -8,22 +8,16 @@ public class menuCU extends javax.swing.JFrame {
     OyenteInformacion oi;
     public menuCU() {
         initComponents();
-        //boton serie
-        oc =  new OyenteCliente(this, SERIE);
-        SERIE.addActionListener(oc);
-        //boton regresar
-        oc =  new OyenteCliente(this,REGRESAR);
+
+        oc =  new OyenteCliente(this,SERIE,PELICULA,DOCUMENTAL,REGRESAR,pagos);
         REGRESAR.addActionListener(oc);
-        //BOTON SERIES
-        oc =  new OyenteCliente(this,SERIE,PELICULA,DOCUMENTAL);
         SERIE.addActionListener(oc);
         //BOTON PELICULAS
         PELICULA.addActionListener(oc);
         //BOTON DOCUMENTAL
         DOCUMENTAL.addActionListener(oc);
         //informacion pago 
-        oi =  new OyenteInformacion(this,pagos);
-        pagos.addActionListener(oi);
+        pagos.addActionListener(oc);
         
     }
     @SuppressWarnings("unchecked")
@@ -38,9 +32,7 @@ public class menuCU extends javax.swing.JFrame {
         imagenMenu = new javax.swing.JLabel();
         REGRESAR = new javax.swing.JButton();
         colorBarraMenu = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        proyecto = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         pagos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -94,20 +86,8 @@ public class menuCU extends javax.swing.JFrame {
         colorBarraMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         colorBarraMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        colorBarraMenu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 252, 40));
-
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         colorBarraMenu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 56, 252, -1));
-
-        proyecto.setText("PROYECTO");
-        proyecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                proyectoActionPerformed(evt);
-            }
-        });
-        colorBarraMenu.add(proyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 240, 50));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         colorBarraMenu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 127, 252, 60));
@@ -183,10 +163,6 @@ public class menuCU extends javax.swing.JFrame {
         // TODO add your handling coce here:
     }//GEN-LAST:event_REGRESARActionPerformed
 
-    private void proyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proyectoActionPerformed
-        // TODO add your handling coce here:
-    }//GEN-LAST:event_proyectoActionPerformed
-
     private void pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosActionPerformed
         // TODO add your handling coce here:
     }//GEN-LAST:event_pagosActionPerformed
@@ -246,10 +222,8 @@ public class menuCU extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JButton pagos;
-    private javax.swing.JButton proyecto;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,17 +12,19 @@ public class OyentePrincipal implements ActionListener{
      Registro miRegistro;
      JButton registrarse, inicioSesion;
      JButton guardarRegistro,regresar;
+     JButton regresar_inicio; // REGRESAR A INICIO PRINCIPAL (INCIO SESION -> INICIO)
      //gerente
      JButton regresarSesion,consultaPago,consultaSalario,consultaCliente;
      JButton altaCliente,contratar,consultaPersonal;
      
-    //para inicio sesion 
-    public OyentePrincipal(inicioSesion guiInicio, JButton registrarse, JButton isesion) {
+  //CONSTRUCTOR PARA INICIO SESION.
+    public OyentePrincipal(inicioSesion guiInicio, JButton registrarse, JButton isesion, JButton regresar) {
         sesion = guiInicio;
         this.registrarse = registrarse;
         this.inicioSesion= isesion;
+        this.regresar_inicio = regresar;
     }
-    
+
     //regresar
     
     //para la gui registro

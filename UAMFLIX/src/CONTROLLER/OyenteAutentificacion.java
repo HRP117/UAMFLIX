@@ -3,6 +3,7 @@ package CONTROLLER;
 
 //import GUIS.menuCU;
 
+import VIEW.Inicio;
 import VIEW.Registro;
 import VIEW.inicioSesion;
 
@@ -13,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 
 public class OyenteAutentificacion implements ActionListener{
+     Inicio inicioPrincipal;
      inicioSesion is;
      sesionPersonal sp;
      Registro miRegistro;
@@ -20,6 +22,7 @@ public class OyenteAutentificacion implements ActionListener{
      JButton registrarse, datosTarjeta;
      JButton guardarRegistro,regresar;
      JButton sesionPersonal,regresarMenuInicio;
+
     
      
     //constructor 
@@ -30,17 +33,15 @@ public class OyenteAutentificacion implements ActionListener{
         this.guardarRegistro = guardarRegistro;
         this.regresarMenuInicio = regresar;
     }
+    
     //  S
     public OyenteAutentificacion(menuCU guimenu,JButton guardarRegistro,JButton datosTarjeta) {
         miCU = guimenu;
         this.datosTarjeta = datosTarjeta;
         this.guardarRegistro = guardarRegistro;
     }
-       // REGRESAR - GUI-REGISTRO
-
-    
-    
-    // REGRESAR - GUI-REGISTRO
+ 
+    // SESION PERSONAL:REGRESAR - GUI-REGISTRO
     public OyenteAutentificacion( JButton regresar) {
         this.regresar = regresar;
     }
@@ -48,20 +49,20 @@ public class OyenteAutentificacion implements ActionListener{
   
     public void actionPerformed(ActionEvent ae) {    
         Object botonPresionado = ae.getSource();
-               
-        /* if(botonPresionado==guardarRegistro){ //boton cuando le oprime registrarse, gui registro
-            new menuCU().setVisible(true);
-            //miCU.setLocation(Center);
-            miRegistro.setVisible(false);
-        }*/
         //gui registro
         if(botonPresionado==regresar){
            new inicioSesion().setVisible(true);
            miRegistro.setVisible(false);
         }
         if (botonPresionado==guardarRegistro) {
-            System.out.println("SE DEBE CERRAR LA GUI REGISTRO");
-            //miRegistro.setVisible(false);
+            System.out.println("Cliente registrado");
+            new menuCU().setVisible(true);
+            miRegistro.setVisible(false);
+        }
+        //gui sesion personal
+        if(botonPresionado==regresarMenuInicio){
+            inicioPrincipal.setVisible(true);
+            sp.setVisible(false);
         }
       
         

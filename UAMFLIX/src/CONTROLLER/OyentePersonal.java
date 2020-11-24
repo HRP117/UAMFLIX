@@ -30,10 +30,6 @@ public class OyentePersonal implements ActionListener{
         this.eliminarCuenta = eliminarCuenta;
         this.buscarCliente = buscarCliente;
     }
-
-    public OyentePersonal(JButton regresar, JButton CONSULTAR, GERENTE_CONSULTAR_INFO_CLIENTE aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
      
         public void actionPerformed(ActionEvent ae) {
         Object botonPresionado = ae.getSource();
