@@ -60,7 +60,7 @@ public class menuCU extends javax.swing.JFrame {
                 PELICULAActionPerformed(evt);
             }
         });
-        jPanel3.add(PELICULA, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        jPanel3.add(PELICULA, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
         DOCUMENTAL.setText("DOCUMENTALES");
         DOCUMENTAL.addActionListener(new java.awt.event.ActionListener() {
