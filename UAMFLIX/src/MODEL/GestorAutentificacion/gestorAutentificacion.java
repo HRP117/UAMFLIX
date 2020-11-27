@@ -5,9 +5,11 @@
  */
 package MODEL.GestorAutentificacion;
 
+import MODEL.GestorPago.TarjetaCredito;
 import VIEW.*;
 import MODEL.GestorPersonalCliente.Cliente;
 import MODEL.GestorPersonalCliente.Personal;
+import MODEL.gestorBD.conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +22,7 @@ import javax.swing.JTextField;
 
 public class gestorAutentificacion {
     //metodo registrar
-   public boolean registrar(Cliente cliente){
+   public boolean registrar(Cliente cliente,TarjetaCredito tarjeta){
         //int resultado=0;
       conexion con = new conexion();
       PreparedStatement ps;
@@ -30,8 +32,11 @@ public class gestorAutentificacion {
                   + "NICKNAME,CONTRASEÑA,ESTATUS_CU,ESTATUS_B )"
                   + "values(?,?,?,?,?,?,?,?,?)";*/
           String sql = "INSERT INTO `uamflix`.`clientes_cu` (`ID_CLIENTE_CU`, `NOMBRE_CU`, `CORREO_CU`, `TELEFONO_CU`,"
-                  + "`NICKNAME`, `CONTRASEÑA`, `ESTATUS_CU`, `ESTATUS_B`,`NUM_TARJETA`)"
+                  + "`NICKNAME`, `CONTRASEÑA_CU`, `ESTATUS_CU`, `ESTATUS_B`,`NUM_TARJETA`)"
                   + "VALUES(?,?,?,?,?,?,?,?,?)";
+//          String tarjeta = "INSERT INTO `uamflix`.`TARJETA` (`NUM_TARJETA`, `NOMBRE_TARJ`, `APELLIDO_TARJ`, `FECHA_VEN`,"
+//                  + "`CVV`)"
+//                  + "VALUES(?,?,?,?,?)";
           ps = (PreparedStatement)conexion.prepareStatement(sql);
           ps.setString(1,cliente.getIdCliente());      
           ps.setString(2,cliente.getNombre());
@@ -41,7 +46,7 @@ public class gestorAutentificacion {
           ps.setString(6,cliente.getContraseña());
           ps.setBoolean(7,cliente.getEstatusCliente());
           ps.setBoolean(8,cliente.getEstatusBeca());
-          ps.setString(9, cliente.getTarjeta().getNumeroTarjeta());
+          ps.setString(9, tarjeta.getNumeroTarjeta());
           ps.executeUpdate();
           //System.out.println("ps: "+ps);
             //ps.close();
@@ -52,11 +57,32 @@ public class gestorAutentificacion {
             return false;
         }
     }
+   public boolean datosTarjeta(Cliente cliente,TarjetaCredito tarjeta){
+       conexion con = new conexion();
+      PreparedStatement ps;
+      try{
+          Connection conexion = con.getConnection();
+         String sql = "INSERT INTO `uamflix`.`TARJETAS` (`NUM_TARJETA`, `NOMBRE_TARJ`, `FECHA_VEN`,`CVV`)"
+                  + "VALUES(?,?,?,?)";
+          
+          ps = (PreparedStatement)conexion.prepareStatement(sql);
+          ps.setString(1,tarjeta.getNumeroTarjeta());   
+          ps.setString(2,cliente.getTarjeta().getNombreTitular());
+          ps.setString(3, cliente.getTarjeta().getFechaVenc());
+          ps.setString(4,cliente.getTarjeta().getCVV());
+          ps.executeUpdate();
+          return true; 
+       
+      }catch(SQLException ex){
+            System.out.println("ERROR: " +ex);
+            return false;
+        }
+   }
     public boolean iniciarSesion(Cliente cliente, String BuscarMatricula, String BuscarClave) {
         conexion con = new conexion();
         PreparedStatement ps;
         ResultSet rs;
-        String sql = "SELECT * FROM clientes_cu WHERE ID_CLIENTE_CU=? AND CONTRASEÑA=?";
+        String sql = "SELECT * FROM clientes_cu WHERE ID_CLIENTE_CU=? AND CONTRASEÑA_CU=?";
         try {
             //System.out.println("SQL COMAND: "+sql);
             Connection conexion = con.getConnection();

@@ -5,14 +5,25 @@
  */
 package MODEL.GestorPersonalCliente;
 
+import MODEL.GestorPago.TarjetaCredito;
+
 public class Personal extends Usuario{
     String IdPersonal;
     String Cargo;
-    Float Sueldo;
+    String Sueldo;
     Boolean EstatusPersonal;
+    TarjetaCredito tarjeta;
 
     public Personal(){
         
+    }
+
+    public TarjetaCredito getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaCredito tarjeta) {
+        this.tarjeta = tarjeta;
     }
     
     
@@ -24,7 +35,7 @@ public class Personal extends Usuario{
         return Cargo;
     }
 
-    public Float getSueldo() {
+    public String getSueldo() {
         return Sueldo;
     }
 
@@ -40,7 +51,7 @@ public class Personal extends Usuario{
         this.Cargo = Cargo;
     }
 
-    public void setSueldo(Float Sueldo) {
+    public void setSueldo(String Sueldo) {
         this.Sueldo = Sueldo;
     }
 

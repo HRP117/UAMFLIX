@@ -9,13 +9,14 @@ import MODEL.GestorPersonalCliente.Usuario;
 import java.util.Date;
 
 public class Pago {
-    Date Fecha;
+    String Fecha;
     TarjetaCredito Tarjeta;
     String Nombre;
     Usuario TipoUsuario;
-    Double Cantidad;
+    String Cantidad;
+    String idPago;
 
-    public Date getFecha() {
+    public String getFecha() {
         return Fecha;
     }
 
@@ -31,11 +32,11 @@ public class Pago {
         return TipoUsuario;
     }
 
-    public Double getCantidad() {
+    public String getCantidad() {
         return Cantidad;
     }
 
-    public void setFecha(Date Fecha) {
+    public void setFecha(String Fecha) {
         this.Fecha = Fecha;
     }
 
@@ -51,7 +52,16 @@ public class Pago {
         this.TipoUsuario = TipoUsuario;
     }
 
-    public void setCantidad(Double Cantidad) {
+    public void setCantidad(String Cantidad) {
         this.Cantidad = Cantidad;
     }
+
+    public String getIdPago() {
+        return idPago;
+    }
+
+    public void setIdPago(String idPago) {
+        this.idPago = idPago;
+    }
+    
 }

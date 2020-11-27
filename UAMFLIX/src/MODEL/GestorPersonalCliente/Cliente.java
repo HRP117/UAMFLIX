@@ -12,16 +12,14 @@ public class Cliente extends Usuario{
     String IdCliente;
     Boolean EstatusBeca;
     Boolean EstatusProyecto;
-    String IdProyecto;
     Boolean EstatusCliente;
     TarjetaCredito tarjeta;
 
-    public Cliente(String IdCliente, Boolean EstatusBeca, Boolean EstatusProyecto, String IdProyecto, Boolean EstatusCliente, TarjetaCredito tarjeta, String Nombre, String Apellido, String Nickname, String Correo, String Telefono, String Contraseña) {
+    public Cliente(String IdCliente, Boolean EstatusBeca, Boolean EstatusProyecto, Boolean EstatusCliente, TarjetaCredito tarjeta, String Nombre, String Apellido, String Nickname, String Correo, String Telefono, String Contraseña) {
         super(Nombre, Apellido, Nickname, Correo, Telefono, Contraseña);
         this.IdCliente = IdCliente;
         this.EstatusBeca = EstatusBeca;
         this.EstatusProyecto = EstatusProyecto;
-        this.IdProyecto = IdProyecto;
         this.EstatusCliente = EstatusCliente;
         this.tarjeta = tarjeta;
     }
@@ -56,14 +54,6 @@ public class Cliente extends Usuario{
 
     public void setEstatusProyecto(Boolean EstatusProyecto) {
         this.EstatusProyecto = EstatusProyecto;
-    }
-
-    public String getIdProyecto() {
-        return IdProyecto;
-    }
-
-    public void setIdProyecto(String IdProyecto) {
-        this.IdProyecto = IdProyecto;
     }
 
     public Boolean getEstatusCliente() {
@@ -129,6 +119,8 @@ public class Cliente extends Usuario{
     public void setContraseña(String Contraseña) {
         this.Contraseña = Contraseña;
     }
+    
+    
     public void DatosCliente(){
         System.out.println("ID Cliente: "+ getIdCliente() 
                 +"\nNombre: "+getNombre()+""

@@ -3,55 +3,62 @@ package CONTROLLER;
 
 //import GUIS.menuCU;
 
-import VIEW.Inicio;
-import VIEW.Registro;
-import VIEW.inicioSesion;
-
-import VIEW.menuCU;
-import VIEW.sesionPersonal;
+import VIEW.PRINCIPAL.Inicio;
+import VIEW.AUTENTIFICACION.RegistroCliente;
+import VIEW.AUTENTIFICACION.inicioSesionCliente;
+import VIEW.PRINCIPAL.menuCU;
+import VIEW.AUTENTIFICACION.sesionPersonal;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 
 public class OyenteAutentificacion implements ActionListener{
      Inicio inicioPrincipal;
-     inicioSesion is;
+     inicioSesionCliente is;
      sesionPersonal sp;
-     Registro miRegistro;
+     RegistroCliente miRegistro;
      menuCU miCU;
      JButton registrarse, datosTarjeta;
+     //botones para gui registro
      JButton guardarRegistro,regresar;
-     JButton sesionPersonal,regresarMenuInicio;
+     
+     JButton sesionPersonal,regresarMenuInicio,regresarMenuInicio1;
+     
 
     
      
     //constructor 
    
-    //  REGISTRO - GUI REGISTRE.
-    public OyenteAutentificacion(JButton regresar,JButton guardarRegistro,Registro guiRegistro){
+    //  REGISTRO - GUI REGISTRO.
+    public OyenteAutentificacion(JButton regresar,JButton guardarRegistro,RegistroCliente guiRegistro){
         miRegistro = guiRegistro;
         this.guardarRegistro = guardarRegistro;
-        this.regresarMenuInicio = regresar;
+        this.regresar = regresar;
     }
     
-    //  S
+    //  menu cliente
     public OyenteAutentificacion(menuCU guimenu,JButton guardarRegistro,JButton datosTarjeta) {
         miCU = guimenu;
         this.datosTarjeta = datosTarjeta;
         this.guardarRegistro = guardarRegistro;
     }
  
-    // SESION PERSONAL:REGRESAR - GUI-REGISTRO
-    public OyenteAutentificacion( JButton regresar) {
-        this.regresar = regresar;
+    // SESION PERSONAL
+
+    public OyenteAutentificacion(sesionPersonal sp, JButton regresarMenuInicio1) {
+        this.sp = sp;
+        this.regresarMenuInicio1 = regresarMenuInicio1;
     }
+
+    
+    
     
   
     public void actionPerformed(ActionEvent ae) {    
         Object botonPresionado = ae.getSource();
         //gui registro
         if(botonPresionado==regresar){
-           new inicioSesion().setVisible(true);
+           new inicioSesionCliente().setVisible(true);
            miRegistro.setVisible(false);
         }
         if (botonPresionado==guardarRegistro) {
@@ -59,12 +66,14 @@ public class OyenteAutentificacion implements ActionListener{
             new menuCU().setVisible(true);
             miRegistro.setVisible(false);
         }
-        //gui sesion personal
-        if(botonPresionado==regresarMenuInicio){
-            inicioPrincipal.setVisible(true);
-            sp.setVisible(false);
-        }
-      
         
+        //gui sesion personal
+        if(botonPresionado==regresarMenuInicio1){
+            new Inicio().setVisible(true);
+            sp.setVisible(false);   //error
+            //miRegistro.setVisible(false);
+            
+        }
+         
     }
 }

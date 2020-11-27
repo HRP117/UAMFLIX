@@ -9,8 +9,8 @@ public class Pelicula extends ContenidoMultimedia{
   int Id_pelicula;
  String TituloP;
 
-    public Pelicula(int Id_pelicula, String TituloP, int IdContenido, String Categoria, String Sinopsis, String Director, int Duracion) {
-        super(IdContenido, Categoria, Sinopsis, Director, Duracion);
+    public Pelicula(int Id_pelicula, String TituloP, String IdContenido, String Titulo, String Categoria, String Sinopsis, String Duracion, String IdDirector, Boolean Estatus_CM) {
+        super(IdContenido, Titulo, Categoria, Sinopsis, Duracion, IdDirector, Estatus_CM);
         this.Id_pelicula = Id_pelicula;
         this.TituloP = TituloP;
     }

@@ -5,11 +5,19 @@
 //consultar pagos//
 package CONTROLLER;
 
+import MODEL.GestorContenidoMultimedia.Documental;
+import MODEL.GestorContenidoMultimedia.Pelicula;
+import MODEL.GestorContenidoMultimedia.Serie;
 import VIEW.*;
+import VIEW.AUTENTIFICACION.inicioSesionCliente;
+import VIEW.CONTENIDO.Cliente_Documentales;
+import VIEW.CONTENIDO.Cliente_Pelicuals;
+import VIEW.CONTENIDO.Cliente_Series;
+import VIEW.INFORMACION.Cliente_consultarPago;
+import VIEW.PERSONAL_Y_CLIENTE.Cliente_Cancelar_servicio;
+import VIEW.PRINCIPAL.menuCU;
 
-import VIEW.inicioSesion;
-import VIEW.menuCU;
-import VIEW.sesionPersonal;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -20,11 +28,14 @@ public class OyenteCliente implements ActionListener {
     //atributos//
     Cliente_consultarPago ccp;
     Cliente_Cancelar_servicio ccs;
-    inicioSesion is;
+    inicioSesionCliente is;
+    //contenido multimedia
     menuCU miCU;
-//    Documental GUIdoc;
-//    Serie GUIserie;
-//    Pelicula GUIpelicula;
+    Cliente_Documentales cd;
+    Cliente_Pelicuals cp;
+    Cliente_Series cs;
+    
+    
     JButton serie, pelicula, documental;
     JButton conPago; 
     JButton regresar_menu;
@@ -52,20 +63,20 @@ public class OyenteCliente implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         Object botonPresionado = ae.getSource();
         //MENU CLIENTE
-//        if(botonPresionado==serie){ //boton cuando le oprime registrarse, gui registro
-//            new Serie().setVisible(true);
-//            miCU.setVisible(false);
-//        }
-//        if(botonPresionado==documental){
-//            new Documental().setVisible(true);
-//            miCU.setVisible(false);
-//        }
-//        if(botonPresionado==pelicula){
-//            new Pelicula().setVisible(true);
-//            miCU.setVisible(false);
-//        }
+        if(botonPresionado==serie){ //boton cuando le oprime registrarse, gui registro
+            new Cliente_Series().setVisible(true);
+            miCU.setVisible(false);
+        }
+        if(botonPresionado==documental){
+            new Cliente_Documentales().setVisible(true);
+            miCU.setVisible(false);
+        }
+        if(botonPresionado==pelicula){
+            new Cliente_Pelicuals().setVisible(true);
+            miCU.setVisible(false);
+        }
         if(botonPresionado==regresar_menu){
-            new inicioSesion().setVisible(true);
+            new inicioSesionCliente().setVisible(true);
             miCU.setVisible(false);
         }
         

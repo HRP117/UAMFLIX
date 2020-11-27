@@ -10,8 +10,8 @@ public class Documental extends ContenidoMultimedia{
   
   //constructor//
 
-    public Documental(int IdDocumental, String TituloDoc, int IdContenido, String Categoria, String Sinopsis, String Director, int Duracion) {
-        super(IdContenido, Categoria, Sinopsis, Director, Duracion);
+    public Documental(int IdDocumental, String TituloDoc, String IdContenido, String Titulo, String Categoria, String Sinopsis, String Duracion, String IdDirector, Boolean Estatus_CM) {
+        super(IdContenido, Titulo, Categoria, Sinopsis, Duracion, IdDirector, Estatus_CM);
         this.IdDocumental = IdDocumental;
         this.TituloDoc = TituloDoc;
     }

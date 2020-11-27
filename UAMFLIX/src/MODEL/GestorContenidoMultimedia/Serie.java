@@ -15,8 +15,8 @@ public class Serie extends ContenidoMultimedia{
    String tituloSerie;
    //constructor
 
-    public Serie(int IdSerie, String tituloSerie, int IdContenido, String Categoria, String Sinopsis, String Director, int Duracion) {
-        super(IdContenido, Categoria, Sinopsis, Director, Duracion);
+    public Serie(int IdSerie, String tituloSerie, String IdContenido, String Titulo, String Categoria, String Sinopsis, String Duracion, String IdDirector, Boolean Estatus_CM) {
+        super(IdContenido, Titulo, Categoria, Sinopsis, Duracion, IdDirector, Estatus_CM);
         this.IdSerie = IdSerie;
         this.tituloSerie = tituloSerie;
     }

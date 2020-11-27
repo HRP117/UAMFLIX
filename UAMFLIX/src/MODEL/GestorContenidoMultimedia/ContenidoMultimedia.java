@@ -2,62 +2,79 @@
 package MODEL.GestorContenidoMultimedia;
 
 public class ContenidoMultimedia {
-  int IdContenido;
+  String IdContenido;
+  String Titulo;
   String Categoria;
   String Sinopsis;
-  String Director;
-  int Duracion;
+  String Duracion;
+  String IdDirector;
+  Boolean Estatus_CM;
+
+    public ContenidoMultimedia(){}
     
-  //constructor//
-    public ContenidoMultimedia(int IdContenido, String Categoria, String Sinopsis, String Director, int Duracion) {
+    public ContenidoMultimedia(String IdContenido, String Titulo, String Categoria, String Sinopsis, String Duracion, String IdDirector, Boolean Estatus_CM) {
         this.IdContenido = IdContenido;
+        this.Titulo = Titulo;
         this.Categoria = Categoria;
         this.Sinopsis = Sinopsis;
-        this.Director = Director;
         this.Duracion = Duracion;
+        this.IdDirector = IdDirector;
+        this.Estatus_CM = Estatus_CM;
     }
-  //metodos//
 
-    public int getIdContenido() {
+    public String getIdContenido() {
         return IdContenido;
     }
 
-    public void setIdContenido(int IdContenido) {
-        this.IdContenido = IdContenido;
+    public String getTitulo() {
+        return Titulo;
     }
 
     public String getCategoria() {
         return Categoria;
     }
 
-    public void setCategoria(String Categoria) {
-        this.Categoria = Categoria;
-    }
-
     public String getSinopsis() {
         return Sinopsis;
+    }
+
+    public String getDuracion() {
+        return Duracion;
+    }
+
+    public String getIdDirector() {
+        return IdDirector;
+    }
+
+    public Boolean getEstatus_CM() {
+        return Estatus_CM;
+    }
+
+    public void setIdContenido(String IdContenido) {
+        this.IdContenido = IdContenido;
+    }
+
+    public void setTitulo(String Titulo) {
+        this.Titulo = Titulo;
+    }
+
+    public void setCategoria(String Categoria) {
+        this.Categoria = Categoria;
     }
 
     public void setSinopsis(String Sinopsis) {
         this.Sinopsis = Sinopsis;
     }
 
-    public String getDirector() {
-        return Director;
-    }
-
-    public void setDirector(String Director) {
-        this.Director = Director;
-    }
-
-    public int getDuracion() {
-        return Duracion;
-    }
-
-    public void setDuracion(int Duracion) {
+    public void setDuracion(String Duracion) {
         this.Duracion = Duracion;
     }
-  
+
+    public void setIdDirector(String IdDirector) {
+        this.IdDirector = IdDirector;
+    }
+
+    public void setEstatus_CM(Boolean Estatus_CM) {
+        this.Estatus_CM = Estatus_CM;
+    }
 }
-
-
