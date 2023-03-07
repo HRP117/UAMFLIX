@@ -1,6 +1,6 @@
 # UAMFLIX
 
-Para crear la base de datos correr este script
+# Para crear la base de datos correr este script
 ----------------------------------------------
 CREATE DATABASE UAMFLIX;
 USE UAMFLIX;
